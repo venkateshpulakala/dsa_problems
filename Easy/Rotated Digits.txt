@@ -1,0 +1,27 @@
+class Solution {
+    public int rotatedDigits(int n) {
+        int count = 0;
+        for(int i = 1;i <= n;i++){
+            if(good(i)){
+                count++;
+            }
+        }
+        return count;
+    }
+    boolean good(int num){
+        boolean chance = false;
+        while(num > 0){
+            int ld = num%10;
+            if(ld == 2 || ld == 5 || ld == 6 || ld == 9){
+                chance = true;
+            }else if(ld == 3 || ld == 4 || ld == 7){
+                return false;
+            }
+            num = num/10;
+        }
+        return chance;
+    }
+}
+
+//Time Complexity : O(nlog10(n))
+//Space Complexity: O(1)
