@@ -48,5 +48,4 @@ class Solution {
             step++;
         }
         return 0;
-    }
-}
+    
